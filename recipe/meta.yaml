@@ -1,6 +1,6 @@
 {% set name = "cgen" %}
-{% set version = "2016.2" %}
-{% set sha256 = "879b7fe1842a1352591e202d1c33da2aa38b5dfe82ba59493b2b6bba6d5d7ce5" %}
+{% set version = "2016.2.1" %}
+{% set sha256 = "e84aa0e411ed37895db93693794ae5caec6af31b157e694258a50494a4e0bbe6" %}
 
 package:
     name: {{ name|lower }}
