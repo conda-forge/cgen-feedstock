@@ -41,8 +41,8 @@ about:
     license: MIT
     license_file: LICENSE
     summary: C/C++ source generation from an AST
-    dev_url: http://github.com/inducer/cgen
     doc_url: https://documen.tician.de/cgen
+    dev_url: http://github.com/inducer/cgen
 
 extra:
     recipe-maintainers:
