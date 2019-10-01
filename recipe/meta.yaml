@@ -1,6 +1,6 @@
 {% set name = "cgen" %}
-{% set version = "2017.1" %}
-{% set sha256 = "a04525d51ee975d37d590d6d82bf80a46e77f75187cccfd2248a89616a778795" %}
+{% set version = "2019.1" %}
+{% set sha256 = "d5285fe4e6202aed7c7f16fb6606b885c34c30e93a3ca6c7d33839e1a5fbfd11" %}
 
 package:
     name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
 
 build:
     noarch: python
-    number: 1
-    script: python -m pip install --no-deps --ignore-installed .
+    number: 0
+    script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
     build:
