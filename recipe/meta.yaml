@@ -13,18 +13,18 @@ source:
 
 build:
     noarch: python
-    number: 0
+    number: 1
     script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
     build:
-        - python
+        - python >=3.8
         - setuptools
         - pytools
         - six
         - pip
     run:
-        - python
+        - python >=3.8
         - pytools
         - numpy
         - six
