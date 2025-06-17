@@ -1,53 +1,53 @@
 {% set name = "cgen" %}
-{% set version = "2020.1" %}
-{% set sha256 = "4ec99d0c832d9f95f5e51dd18a629ad50df0b5464ce557ef42c6e0cd9478bfcf" %}
+{% set version = "2025.1" %}
+{% set sha256 = "79f01e010d49c13e58b4ca8f2d4996a6b7178968f5f2d906262733480ae7a2d4" %}
 
 package:
-    name: {{ name|lower }}
-    version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-    fn: {{ name }}-{{ version }}.tar.gz
-    url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ sha256 }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-    noarch: python
-    number: 2
-    script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-    host:
-        - python {{ python_min }}
-        - setuptools
-        - pytools
-        - six
-        - pip
-    run:
-        - python >={{ python_min }}
-        - pytools
-        - numpy
-        - six
+  host:
+    - python {{ python_min }}
+    - setuptools
+    - pytools
+    - six
+    - pip
+  run:
+    - python >={{ python_min }}
+    - pytools
+    - numpy
+    - six
 
 test:
-    requires:
-        - pytest
-        - python {{ python_min }}
-    imports:
-        - {{ name }}
-    source_files:
-        - test
-    commands:
-         - cd test && python -m pytest
+  requires:
+    - pytest
+    - python {{ python_min }}
+  imports:
+    - {{ name }}
+  source_files:
+    - test
+  commands:
+    - cd test && python -m pytest
 
 about:
-    home: http://pypi.python.org/pypi/cgen
-    license: MIT
-    license_file: LICENSE
-    summary: C/C++ source generation from an AST
-    doc_url: https://documen.tician.de/cgen
-    dev_url: http://github.com/inducer/cgen
+  home: http://pypi.python.org/pypi/cgen
+  license: MIT
+  license_file: LICENSE
+  summary: C/C++ source generation from an AST
+  doc_url: https://documen.tician.de/cgen
+  dev_url: http://github.com/inducer/cgen
 
 extra:
-    recipe-maintainers:
-        - inducer
+  recipe-maintainers:
+    - inducer
